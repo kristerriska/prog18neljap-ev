@@ -18,7 +18,7 @@ public class Algus {
     public static void toatemperatuur(int temperatuur){      
         if(temperatuur<18){System.out.println("Külm");}
         if(temperatuur>30){System.out.println("Palav");}
-        if(30>temperatuur>18){System.out.println("Paras");}
+        if(temperatuur>18){System.out.println("Paras");}
     }
     
     /**

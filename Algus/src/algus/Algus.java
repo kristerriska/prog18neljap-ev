@@ -6,18 +6,25 @@
 package algus;
 
 /**
- *
- * @author if17
+ * Esimene katsetus. Muutujad, valik, massiiv
+ * @author provisional
  */
 public class Algus {
 
     /**
-     * Esimene katsetus. Muutujad, valik, massiiv
-     * Programmi töö alguskoht
+     * Arvamus ilma kohta
+     */
+    public static void ilmaKommentaar(int temperatuur){      
+        if(temperatuur>0){System.out.println("sulab");}
+        else{System.out.println("Jäätab");}    
+    }
+    /**
+     * Programmi töö alguskoht. Siit alustatakse käivitamisel
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello, Web");
+        System.out.println("Hello, Web!");
+        ilmaKommentaar(3);
     }
     
 }

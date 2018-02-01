@@ -12,7 +12,7 @@ package algus;
 public class Algus {
 
     /**
-     * Arvamus ilma kohta
+     * Arvamus ilma kohta 
      */
     public static void ilmaKommentaar(int temperatuur){      
         if(temperatuur>0){System.out.println("sulab");}

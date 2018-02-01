@@ -24,7 +24,9 @@ public class Algus {
      */
     public static void main(String[] args) {
         System.out.println("Hello, Web!");
+
         ilmaKommentaar(3);
+
     }
     
 }

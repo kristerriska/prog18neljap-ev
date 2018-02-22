@@ -6,6 +6,9 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.awt.image.*;
+import java.io.File;
+import javax.imageio.*;
 
 public class Vorkandmed_joonis extends JPanel {
 
@@ -37,15 +40,31 @@ public class Vorkandmed_joonis extends JPanel {
         }
         return ounad;
     }
-
-    @Override
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.fillOval(30, 40, 5, 5);
+    
+    void joonistaOunad(Graphics g){
         double koef=10;
         for(double[] m: kysiOunteAndmed()){
            g.fillOval(getHeight()-(int)(m[0]*10), (int)(m[1]*10), 5, 5);
         }
+    }
+    
+    void ounteJoonisFaili(){
+        try {
+            BufferedImage bi=new BufferedImage (400, 300, BufferedImage.TYPE_INT_RGB);
+            Graphics g=bi.createGraphics();
+            g.setColor(Color.YELLOW);
+            g.fillRect(0, 0, 400, 300);
+            g.setColor(Color.RED);
+            joonistaOunad(g);
+            ImageIO.write(bi, "png", new File("Y:\\Krister Riska\\Programmeerimise põhikursus\\joonis.png"));
+        }catch(Exception ex) {ex.printStackTrace();}
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        joonistaOunad(g);
+        ounteJoonisFaili();        
     }
 
     public static void main(String[] arg) {
